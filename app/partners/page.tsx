@@ -1,3 +1,9 @@
+import PartnersSection from "@/components/pages/Partners/PartnersSection";
+
 export default function Partners() {
-  return <div>Partners</div>;
+  return (
+    <div className='min-h-screen bg-white'>
+      <PartnersSection />
+    </div>
+  );
 }

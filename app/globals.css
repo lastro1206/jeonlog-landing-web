@@ -193,8 +193,45 @@ table {
   }
 }
 
+@keyframes rotate-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-rotate-slow {
+  animation: rotate-slow 35s linear infinite;
+}
+
 .animate-scroll-down {
   animation: scroll-down 2s ease-in-out infinite;
+}
+
+@keyframes flip-3d {
+  0% {
+    transform: perspective(1000px) rotateX(0deg);
+    opacity: 1;
+  }
+  45% {
+    transform: perspective(1000px) rotateX(90deg) translateY(20px);
+    opacity: 0;
+  }
+  55% {
+    transform: perspective(1000px) rotateX(-90deg) translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: perspective(1000px) rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+.animate-flip-3d {
+  animation: flip-3d 1s ease-in-out;
+  backface-visibility: hidden;
 }
 
 ::-webkit-scrollbar {

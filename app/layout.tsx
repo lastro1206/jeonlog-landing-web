@@ -32,7 +32,7 @@ const pretendard = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Jeonlog - 당신을 위한 전시 플랫폼",
+  title: "Jeon:log - 당신을 위한 전시 플랫폼",
   description: "데이터가 고르는 추천, 사람이 완성한 큐레이션",
   icons: {
     icon: [

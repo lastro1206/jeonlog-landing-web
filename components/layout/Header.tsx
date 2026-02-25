@@ -39,7 +39,7 @@ export default function Header() {
               <Link
                 href='/about-us'
                 className='text-sm font-medium text-white hover:text-white/80 transition-colors'>
-                전록소개
+                전:록소개
               </Link>
               <Link
                 href='/partnership'
