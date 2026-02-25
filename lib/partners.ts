@@ -14,7 +14,7 @@ export const partners: Partner[] = [
     nameEn: "Sejong Center for the Performing Arts",
   },
   { id: "4", name: "일민미술관", nameEn: "Ilmin Museum of Art" },
-  { id: "5", name: "마이어트뮤지엄", nameEn: "Myart Museum" },
+  { id: "5", name: "마이아트뮤지엄", nameEn: "Myart Museum" },
   { id: "6", name: "한원미술관", nameEn: "Hanwon Museum of Art" },
   { id: "7", name: "환기미술관", nameEn: "Whanki Museum" },
   { id: "8", name: "갤러리밈", nameEn: "Gallery Meme" },
