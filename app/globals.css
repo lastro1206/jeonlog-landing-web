@@ -183,6 +183,20 @@ table {
   }
 }
 
+@keyframes scroll-down {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+.animate-scroll-down {
+  animation: scroll-down 2s ease-in-out infinite;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }

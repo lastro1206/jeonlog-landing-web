@@ -1,33 +1,40 @@
 import Link from "next/link";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className='bg-primary text-primary-foreground'>
-      <div className='container mx-auto px-4 sm:px-6 lg:px-8 py-6'>
-        <div className='flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0'>
-          {/* 저작권 */}
-          <p className='text-sm text-primary-foreground/60'>
-            © {currentYear} Jeonlog. All rights reserved.
-          </p>
+    <footer className='bg-[#3d6034] text-white'>
+      <div className='container mx-auto px-4 sm:px-6 lg:px-8 py-8'>
+        {/* 상단: 브랜드명과 회사 정보 */}
+        <div className='mb-8'>
+          {/* 브랜드명 */}
+          <h2 className='text-2xl font-bold mb-6'>전:록</h2>
 
-          {/* Quick Links */}
-          <nav className='flex items-center space-x-4'>
+          {/* 회사 정보 */}
+          <div className='text-sm space-y-2'>
+            <p>
+              대표: 권혁준 | 개인정보책임관리자: 권혁준 | 사업자 등록번호: -
+            </p>
+            <p>06778 서울시 서초구 양재동 247-9, 201호 (070-5029-1422)</p>
+          </div>
+        </div>
+
+        {/* 하단: 네비게이션 링크 */}
+        <div className='border-t border-white/20 pt-6'>
+          <nav className='flex items-center space-x-6'>
             <Link
               href='/about-us'
-              className='text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors'>
-              전록소개
+              className='text-[15px] underline hover:opacity-80 transition-opacity'>
+              회사소개
+            </Link>
+            <Link
+              href='/customer-center'
+              className='text-[15px] underline hover:opacity-80 transition-opacity'>
+              고객센터
             </Link>
             <Link
               href='/partnership'
-              className='text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors'>
+              className='text-[15px] underline hover:opacity-80 transition-opacity'>
               제휴문의
-            </Link>
-            <Link
-              href='/partners'
-              className='text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors'>
-              파트너스
             </Link>
           </nav>
         </div>

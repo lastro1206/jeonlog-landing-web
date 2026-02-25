@@ -10,6 +10,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      // 폰트 설정 추가
+      fontFamily: {
+        pretendard: ["var(--font-pretendard)", "sans-serif"],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -56,6 +60,16 @@ module.exports = {
           4: "hsl(var(--chart-4))",
           5: "hsl(var(--chart-5))",
         },
+      },
+      // 애니메이션 추가 (스크롤 다운 화살표용)
+      keyframes: {
+        "scroll-down": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(10px)" },
+        },
+      },
+      animation: {
+        "scroll-down": "scroll-down 1.5s ease-in-out infinite",
       },
     },
   },

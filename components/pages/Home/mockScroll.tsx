@@ -1,5 +1,3 @@
-/** 헤더 스크롤 테스트 컴포넌트 */
-
 "use client";
 
 import { useEffect, useState } from "react";
@@ -34,5 +32,5 @@ export default function ScrollableContainer({
     };
   }, [lastScrollY, onScroll]);
 
-  return <div className='min-h-screen'>{children}</div>;
+  return <div className='w-full overflow-y-auto'>{children}</div>;
 }
