@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { partners } from "@/lib/partners";
 import Image from "next/image";
+import { useSectionAnimation } from "@/hooks/useSectionAnimation";
 
 export default function PartnersSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -11,6 +12,11 @@ export default function PartnersSection() {
   const [showArrow, setShowArrow] = useState(true);
   const [isCardsVisible, setIsCardsVisible] = useState(false);
   const cardsRef = useRef<HTMLDivElement>(null);
+  const { ref: sectionRef, isVisible: isSectionVisible } = useSectionAnimation({
+    threshold: 0.1,
+    rootMargin: "0px",
+    triggerOnce: true,
+  });
 
   const partnersName = partners.map((partner) => partner.name);
 
@@ -89,9 +95,14 @@ export default function PartnersSection() {
   };
 
   return (
-    <section className='relative bg-gradient-to-b from-white to-[#304D29]'>
+    <section
+      ref={sectionRef as React.RefObject<HTMLElement>}
+      className='relative bg-gradient-to-b from-white to-[#304D29]'>
       <div className='min-h-screen flex flex-col items-center justify-center px-4'>
-        <div className='container mx-auto max-w-6xl text-center'>
+        <div
+          className={`container mx-auto max-w-6xl text-center section-fade-in ${
+            isSectionVisible ? "visible" : ""
+          }`}>
           <p className='text-4xl md:text-4xl text-[#3d6034] mb-6 font-pretendard text-[15px] leading-normal tracking-normal font-extrabold'>
             전:록과 함께하고 있는
           </p>

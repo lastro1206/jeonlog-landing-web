@@ -2,8 +2,15 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { useSectionAnimation } from "@/hooks/useSectionAnimation";
 
 export default function HeroSection() {
+  const { ref, isVisible } = useSectionAnimation({
+    threshold: 0.1,
+    rootMargin: "0px",
+    triggerOnce: true,
+  });
+
   const handleScrollDown = () => {
     window.scrollTo({
       top: window.innerHeight,
@@ -13,7 +20,10 @@ export default function HeroSection() {
 
   return (
     <section
-      className='relative w-full overflow-hidden bg-black'
+      ref={ref as React.RefObject<HTMLElement>}
+      className={`relative w-full overflow-hidden bg-black section-fade-in ${
+        isVisible ? "visible" : ""
+      }`}
       style={{ height: "100vh" }}>
       <div className='absolute inset-0 z-0'>
         <Image

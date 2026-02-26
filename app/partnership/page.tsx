@@ -1,7 +1,16 @@
+"use client";
+
 import RotatingGallery from "@/components/pages/Partnership/RotatingGallery";
 import { Button } from "@/components/ui/button";
+import { useSectionAnimation } from "@/hooks/useSectionAnimation";
 
 export default function Partnership() {
+  const { ref, isVisible } = useSectionAnimation({
+    threshold: 0.1,
+    rootMargin: "0px",
+    triggerOnce: true,
+  });
+
   return (
     <div className='min-h-screen bg-white relative'>
       {/* 회전하는 갤러리 이미지 - 전체 화면 배경 */}
@@ -11,7 +20,11 @@ export default function Partnership() {
 
       {/* 가운데 텍스트 영역 */}
       <div className='relative z-20 min-h-screen flex items-end justify-center py-20'>
-        <div className='text-center px-4'>
+        <div
+          ref={ref as React.RefObject<HTMLDivElement>}
+          className={`text-center px-4 section-fade-in ${
+            isVisible ? "visible" : ""
+          }`}>
           <h1 className='text-base md:text-base font-semibold tracking-tight mb-2 text-gray-900 font-pretendard'>
             제휴 · 협업 문의
           </h1>

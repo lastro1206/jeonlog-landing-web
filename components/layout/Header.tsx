@@ -6,11 +6,13 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useScrollDirection } from "@/hooks/useScrollDirection";
 import { useState } from "react";
+import { AppDownloadModal } from "@/components/ui/app-download-modal";
 
 export default function Header() {
   const scrollDirection = useScrollDirection();
   const isVisible = scrollDirection === null || scrollDirection === "up";
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isAppModalOpen, setIsAppModalOpen] = useState(false);
 
   return (
     <header
@@ -55,6 +57,7 @@ export default function Header() {
             <Button
               variant='secondary'
               size='lg'
+              onClick={() => setIsAppModalOpen(true)}
               className='bg-[#C1CBBC] text-[#3d6034] hover:bg-[#C1CBBC]/90 rounded-md font-pretendard text-[15px] leading-normal tracking-normal'>
               앱 다운로드
             </Button>
@@ -99,6 +102,10 @@ export default function Header() {
               </Link>
               <Button
                 variant='default'
+                onClick={() => {
+                  setIsAppModalOpen(true);
+                  setIsMobileMenuOpen(false);
+                }}
                 className='mt-4 w-full bg-white text-[#3d6034] hover:bg-white/90'>
                 앱 다운로드
               </Button>
@@ -106,6 +113,10 @@ export default function Header() {
           </div>
         )}
       </div>
+      <AppDownloadModal
+        open={isAppModalOpen}
+        onOpenChange={setIsAppModalOpen}
+      />
     </header>
   );
 }
