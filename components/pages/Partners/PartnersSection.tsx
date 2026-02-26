@@ -1,13 +1,16 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { partners } from "@/lib/partners";
 import Image from "next/image";
 
 export default function PartnersSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [showCards, setShowCards] = useState(false);
+  const [showCards, setShowCards] = useState(true);
+  const [showArrow, setShowArrow] = useState(true);
+  const [isCardsVisible, setIsCardsVisible] = useState(false);
+  const cardsRef = useRef<HTMLDivElement>(null);
 
   const partnersName = partners.map((partner) => partner.name);
 
@@ -28,6 +31,51 @@ export default function PartnersSection() {
 
     return () => clearInterval(interval);
   }, [partnersName.length]);
+
+  // 스크롤 위치에 따라 화살표 표시/숨김
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!showCards || !cardsRef.current) {
+        setShowArrow(true);
+        return;
+      }
+
+      const cardsTop = cardsRef.current.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      // 카드 섹션이 화면 상단에 보이면 화살표 숨김, 그렇지 않으면 표시
+      setShowArrow(cardsTop > windowHeight);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // 초기 체크
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [showCards]);
+
+  // 카드 섹션이 나타날 때 애니메이션 트리거
+  useEffect(() => {
+    if (showCards) {
+      // 약간의 지연 후 애니메이션 시작
+      const timer = setTimeout(() => {
+        setIsCardsVisible(true);
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+    // showCards가 false일 때는 비동기로 처리하여 에러 방지
+    const timer = setTimeout(() => {
+      setIsCardsVisible(false);
+    }, 0);
+    return () => clearTimeout(timer);
+  }, [showCards]);
+
+  // 초기 마운트 시 카드 애니메이션 시작
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsCardsVisible(true);
+    }, 300);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleShowCards = () => {
     setShowCards(true);
@@ -79,66 +127,197 @@ export default function PartnersSection() {
           </p>
         </div>
 
-        {/* 화살표 아이콘 */}
-        <button
-          onClick={handleShowCards}
-          className='animate-bounce mt-8 cursor-pointer hover:opacity-70 transition-opacity mx-auto px-4 flex justify-center items-center'
-          aria-label='갤러리 카드 보기'>
-          <svg
-            width='40'
-            height='24'
-            viewBox='0 0 40 24'
-            fill='none'
-            className='mx-auto'>
-            <path
-              d='M2 2L20 20L38 2'
-              stroke='#3d6034'
-              strokeWidth='3'
-              strokeLinecap='round'
-            />
-          </svg>
-        </button>
+        {/* 아래 화살표  */}
+        {showArrow && (
+          <button
+            onClick={handleShowCards}
+            className='fixed bottom-8 justify-center items-center -translate-x-1/2 animate-bounce cursor-pointer hover:opacity-70 transition-opacity z-50'
+            aria-label='갤러리 카드 보기'>
+            <svg
+              width='40'
+              height='24'
+              viewBox='0 0 40 24'
+              fill='none'
+              className='mx-auto'>
+              <path
+                d='M2 2L20 20L38 2'
+                stroke='#fff'
+                strokeWidth='3'
+                strokeLinecap='round'
+              />
+            </svg>
+          </button>
+        )}
       </div>
 
-      {showCards && (
-        <div
-          id='partners-cards'
-          className='container mx-auto max-w-7xl py-20 px-4 animate-fade-in'>
-          <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6'>
-            {partners.map((partner, index) => {
-              const isDark = index % 2 === 0;
-
-              return (
+      <div
+        ref={cardsRef}
+        id='partners-cards'
+        className={`container mx-auto max-w-7xl py-20 px-4 transition-all duration-1000 ease-out ${
+          isCardsVisible
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-10"
+        }`}>
+        {/* 5열 그리드 레이아웃 - 겹침 효과 */}
+        <div className='flex justify-center gap-4 md:gap-6 lg:gap-8'>
+          {/* Column 1: id 1, 2, 3 */}
+          <div className='flex flex-col gap-4 md:gap-6'>
+            {partners
+              .filter((partner) => ["1", "2", "3"].includes(partner.id))
+              .sort((a, b) => parseInt(a.id) - parseInt(b.id))
+              .map((partner, index) => (
                 <div
                   key={partner.id}
-                  className={`p-6 ${
-                    isDark
-                      ? "bg-[#3d6034] text-white"
-                      : "bg-white text-gray-900"
-                  } hover:opacity-90 transition-opacity cursor-pointer`}>
-                  <div className='text-center'>
-                    <h3 className='font-bold text-lg mb-2'>{partner.name}</h3>
-                    {partner.nameEn && (
-                      <p
-                        className={`text-sm ${
-                          isDark ? "text-white/80" : "text-gray-600"
-                        }`}>
-                        {partner.nameEn}
-                      </p>
-                    )}
-                    <p
-                      className={`text-xs mt-4 ${
-                        isDark ? "text-white/60" : "text-gray-400"
-                      }`}>
-                      jeon:log partner
-                    </p>
-                  </div>
+                  className={`relative hover:opacity-90 transition-all hover:scale-105 cursor-pointer ${
+                    isCardsVisible
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-8"
+                  }`}
+                  style={{
+                    transform: `translateY(${index * 20}px)`,
+                    zIndex: 10 - index,
+                    transitionDelay: `${index * 100}ms`,
+                    transitionDuration: "600ms",
+                    transitionTimingFunction: "ease-out",
+                  }}>
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    width={240}
+                    height={300}
+                    className='w-[200px] md:w-[240px] h-auto object-contain'
+                  />
                 </div>
-              );
-            })}
+              ))}
+          </div>
+
+          {/* Column 2: id 4, 5, 6 */}
+          <div className='flex flex-col gap-4 md:gap-6'>
+            {partners
+              .filter((partner) => ["4", "5", "6"].includes(partner.id))
+              .sort((a, b) => parseInt(a.id) - parseInt(b.id))
+              .map((partner, index) => (
+                <div
+                  key={partner.id}
+                  className={`relative hover:opacity-90 transition-all hover:scale-105 cursor-pointer ${
+                    isCardsVisible
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-8"
+                  }`}
+                  style={{
+                    transform: `translateY(${index * 20}px)`,
+                    zIndex: 10 - index,
+                    transitionDelay: `${(index + 3) * 100}ms`,
+                    transitionDuration: "600ms",
+                    transitionTimingFunction: "ease-out",
+                  }}>
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    width={240}
+                    height={300}
+                    className='w-[200px] md:w-[240px] h-auto object-contain'
+                  />
+                </div>
+              ))}
+          </div>
+
+          {/* Column 3: id 7, 8, 9, 10 */}
+          <div className='flex flex-col gap-4 md:gap-6'>
+            {partners
+              .filter((partner) => ["7", "8", "9", "10"].includes(partner.id))
+              .sort((a, b) => parseInt(a.id) - parseInt(b.id))
+              .map((partner, index) => (
+                <div
+                  key={partner.id}
+                  className={`relative hover:opacity-90 transition-all hover:scale-105 cursor-pointer ${
+                    isCardsVisible
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-8"
+                  }`}
+                  style={{
+                    transform: `translateY(${index * 20}px)`,
+                    zIndex: 10 - index,
+                    transitionDelay: `${(index + 6) * 100}ms`,
+                    transitionDuration: "600ms",
+                    transitionTimingFunction: "ease-out",
+                  }}>
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    width={240}
+                    height={300}
+                    className='w-[200px] md:w-[240px] h-auto object-contain'
+                  />
+                </div>
+              ))}
+          </div>
+
+          {/* Column 4: id 11, 12, 13, 14 */}
+          <div className='flex flex-col gap-4 md:gap-6'>
+            {partners
+              .filter((partner) =>
+                ["11", "12", "13", "14"].includes(partner.id)
+              )
+              .sort((a, b) => parseInt(a.id) - parseInt(b.id))
+              .map((partner, index) => (
+                <div
+                  key={partner.id}
+                  className={`relative hover:opacity-90 transition-all hover:scale-105 cursor-pointer ${
+                    isCardsVisible
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-8"
+                  }`}
+                  style={{
+                    transform: `translateY(${index * 20}px)`,
+                    zIndex: 10 - index,
+                    transitionDelay: `${(index + 10) * 100}ms`,
+                    transitionDuration: "600ms",
+                    transitionTimingFunction: "ease-out",
+                  }}>
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    width={240}
+                    height={300}
+                    className='w-[200px] md:w-[240px] h-auto object-contain'
+                  />
+                </div>
+              ))}
+          </div>
+
+          {/* Column 5: id 15, 16, 17 */}
+          <div className='flex flex-col gap-4 md:gap-6'>
+            {partners
+              .filter((partner) => ["15", "16", "17"].includes(partner.id))
+              .sort((a, b) => parseInt(a.id) - parseInt(b.id))
+              .map((partner, index) => (
+                <div
+                  key={partner.id}
+                  className={`relative hover:opacity-90 transition-all hover:scale-105 cursor-pointer ${
+                    isCardsVisible
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-8"
+                  }`}
+                  style={{
+                    transform: `translateY(${index * 20}px)`,
+                    zIndex: 10 - index,
+                    transitionDelay: `${(index + 14) * 100}ms`,
+                    transitionDuration: "600ms",
+                    transitionTimingFunction: "ease-out",
+                  }}>
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    width={240}
+                    height={300}
+                    className='w-[200px] md:w-[240px] h-auto object-contain'
+                  />
+                </div>
+              ))}
           </div>
         </div>
-      )}
+      </div>
     </section>
   );
 }
