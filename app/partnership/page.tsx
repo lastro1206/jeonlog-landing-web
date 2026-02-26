@@ -13,22 +13,22 @@ export default function Partnership() {
       <div className='relative z-20 min-h-screen flex items-end justify-center py-20'>
         <div className='text-center px-4'>
           <h1 className='text-base md:text-base font-semibold tracking-tight mb-2 text-gray-900 font-pretendard'>
-            제휴·협업 문의
+            제휴 · 협업 문의
           </h1>
 
           {/* 이메일 버튼 */}
-          <Button className='bg-black text-white font-semibold hover:bg-gray-800 rounded-full px-6 py-3 mb-8 font-pretendard'>
+          <Button className='bg-black text-white font-semibold hover:bg-gray-800 rounded-full px-6 py-3 mb-8 font-pretendard text-[15px] leading-normal tracking-normal'>
             jeonlogofficial@gmail.com
           </Button>
 
           {/* 설명 텍스트 */}
-          <div className='space-y-2 text-gray-700 font-pretendard'>
-            <p className='text-base md:text-base font-bold '>전:록</p>
-            <p className='text-base md:text-base font-bold'>
-              과 함께할 파트너를 찾습니다
+          <div className='space-y-2 text-black font-pretendard leading-normal tracking-normal'>
+            <p className='text-[24px] md:text-[24px] font-bold leading-normal tracking-normal'>
+              <span className='text-[#3d6034]'>전:록</span>과 함께할 파트너를
+              찾습니다
             </p>
-            <p className='text-base md:text-lg opacity-80'>
-              기관·갤러리 브랜드의 다양한 협업 제안을 환영합니다
+            <p className='text-[24px] md:text-[24px] font-bold leading-normal tracking-normal'>
+              기관 · 갤러리 · 브랜드의 다양한 협업 제안을 환영합니다
             </p>
           </div>
         </div>

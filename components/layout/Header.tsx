@@ -38,24 +38,24 @@ export default function Header() {
             <nav className='flex items-center gap-6'>
               <Link
                 href='/about-us'
-                className='text-sm font-medium text-white hover:text-white/80 transition-colors'>
-                전:록소개
+                className='text-md font-medium text-white hover:text-white/80 transition-colors font-pretendard text-[15px] leading-normal tracking-normal'>
+                전:록 소개
               </Link>
               <Link
                 href='/partnership'
-                className='text-sm font-medium text-white hover:text-white/80 transition-colors'>
+                className='text-md font-medium text-white hover:text-white/80 transition-colors font-pretendard text-[15px] leading-normal tracking-normal'>
                 제휴문의
               </Link>
               <Link
                 href='/partners'
-                className='text-sm font-medium text-white hover:text-white/80 transition-colors'>
+                className='text-md font-medium text-white hover:text-white/80 transition-colors font-pretendard text-[15px] leading-normal tracking-normal'>
                 파트너스
               </Link>
             </nav>
             <Button
               variant='secondary'
-              size='sm'
-              className='bg-white text-[#3d6034] hover:bg-white/90 rounded-md'>
+              size='lg'
+              className='bg-[#C1CBBC] text-[#3d6034] hover:bg-[#C1CBBC]/90 rounded-md font-pretendard text-[15px] leading-normal tracking-normal'>
               앱 다운로드
             </Button>
           </div>
