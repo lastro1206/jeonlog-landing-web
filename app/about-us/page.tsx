@@ -23,14 +23,16 @@ export default function AboutUs() {
       <section
         ref={ref1 as React.RefObject<HTMLElement>}
         className={`w-full section-fade-in ${isVisible1 ? "visible" : ""}`}>
+        <h1 className='sr-only'>전:록 소개</h1>
         <div className='w-full'>
           <Image
             src='/images/introduce/intro1_1920.png'
-            alt='소개 1'
+            alt='전:록 소개'
             width={1920}
             height={1080}
             className='w-full h-auto object-contain'
             unoptimized
+            priority
           />
         </div>
       </section>

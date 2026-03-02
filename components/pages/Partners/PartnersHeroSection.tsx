@@ -71,9 +71,9 @@ export default function PartnersHeroSection() {
         className={`container mx-auto max-w-6xl text-center section-fade-in relative z-10 ${
           isSectionVisible ? "visible" : ""
         }`}>
-        <p className='text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#3d6034] mb-4 sm:mb-5 md:mb-6 font-pretendard leading-normal tracking-normal font-extrabold px-2'>
+        <h1 className='text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#3d6034] mb-4 sm:mb-5 md:mb-6 font-pretendard leading-normal tracking-normal font-extrabold px-2'>
           전:록과 함께하고 있는
-        </p>
+        </h1>
 
         <div className='inline-block perspective-1000'>
           <div
@@ -84,10 +84,11 @@ export default function PartnersHeroSection() {
             <div className='relative inline-block w-[280px] sm:w-[320px] md:w-[360px] lg:w-[400px]'>
               <Image
                 src='/images/partnersNameBorder.png'
-                alt=''
+                alt={`${partnersName[currentIndex]} 파트너 갤러리 로고`}
                 width={400}
                 height={150}
                 className='w-full h-full object-contain'
+                priority
               />
               <div className='absolute inset-0 flex items-center justify-center px-2'>
                 <h2 className='text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-extrabold text-gray-900 tracking-tight text-[#3d6034] whitespace-nowrap'>

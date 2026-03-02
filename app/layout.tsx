@@ -38,8 +38,69 @@ const appleSDGothicNeoB00 = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Jeon:log - 당신을 위한 전시 플랫폼",
-  description: "데이터가 고르는 추천, 사람이 완성한 큐레이션",
+  metadataBase: new URL("https://jeonlog.com"),
+  title: {
+    default: "Jeon:log - 당신을 위한 전시 플랫폼",
+    template: "%s | Jeon:log",
+  },
+  description: "데이터가 고르는 추천, 사람이 완성한 큐레이션. 서울의 모든 전시를 하나의 플랫폼에서 한눈에 확인하고, 맞춤형 큐레이션으로 새로운 관람의 기준을 제안합니다.",
+  keywords: [
+    "전시",
+    "큐레이션",
+    "전시 추천",
+    "서울 전시",
+    "문화 플랫폼",
+    "미술관",
+    "갤러리",
+    "전시회",
+    "예술",
+    "문화",
+    "Jeonlog",
+    "전록",
+    "전시 기록",
+    "전시 추천 플랫폼",
+  ],
+  authors: [{ name: "Jeon:log" }],
+  creator: "Jeon:log",
+  publisher: "Jeon:log",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    type: "website",
+    locale: "ko_KR",
+    url: "https://jeonlog.com",
+    siteName: "Jeon:log",
+    title: "Jeon:log - 당신을 위한 전시 플랫폼",
+    description: "데이터가 고르는 추천, 사람이 완성한 큐레이션. 서울의 모든 전시를 하나의 플랫폼에서 한눈에 확인하고, 맞춤형 큐레이션으로 새로운 관람의 기준을 제안합니다.",
+    images: [
+      {
+        url: "/images/home/homeLogo.png",
+        width: 1200,
+        height: 630,
+        alt: "Jeon:log - 전시 추천 플랫폼",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jeon:log - 당신을 위한 전시 플랫폼",
+    description: "데이터가 고르는 추천, 사람이 완성한 큐레이션",
+    images: ["/images/home/homeLogo.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   icons: {
     icon: [
       {
@@ -53,6 +114,9 @@ export const metadata: Metadata = {
         type: "image/svg",
       },
     ],
+  },
+  alternates: {
+    canonical: "https://jeonlog.com",
   },
 };
 
