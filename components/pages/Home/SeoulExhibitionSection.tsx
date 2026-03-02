@@ -18,7 +18,7 @@ export default function SeoulExhibitionSection() {
       }`}>
       <div className='container mx-auto max-w-4xl text-center'>
         <Image
-          src='/images/home2.png'
+          src='/images/home/home2.png'
           alt='Seoul Exhibition'
           width={1000}
           height={1000}
