@@ -31,6 +31,12 @@ const pretendard = localFont({
   display: "swap",
 });
 
+const appleSDGothicNeoB00 = localFont({
+  src: "../public/fonts/AppleSDGothicNeoB00.ttf",
+  variable: "--font-apple-sd-gothic-neo-b00",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Jeon:log - 당신을 위한 전시 플랫폼",
   description: "데이터가 고르는 추천, 사람이 완성한 큐레이션",
@@ -58,7 +64,7 @@ export default function RootLayout({
   return (
     <html
       lang='ko'
-      className={pretendard.variable}>
+      className={`${pretendard.variable} ${appleSDGothicNeoB00.variable}`}>
       <body className='font-pretendard'>
         <Header />
         <main className='pt-[65px]'>{children}</main>
