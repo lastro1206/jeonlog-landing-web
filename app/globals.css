@@ -203,7 +203,7 @@ table {
 }
 
 .animate-rotate-slow {
-  animation: rotate-slow 35s linear infinite;
+  animation: rotate-slow 70s linear infinite;
 }
 
 .animate-scroll-down {
