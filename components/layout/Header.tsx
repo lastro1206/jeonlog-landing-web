@@ -26,7 +26,7 @@ export default function Header() {
             href='/'
             className='flex items-center hover:opacity-80 transition-opacity'>
             <Image
-              src='/images/homeLogo.png'
+              src='/images/home/homeLogo.png'
               alt='Jeonlog'
               width={120}
               height={35}

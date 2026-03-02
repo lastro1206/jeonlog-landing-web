@@ -27,7 +27,7 @@ export default function HeroSection() {
       style={{ height: "100vh" }}>
       <div className='absolute inset-0 z-0'>
         <Image
-          src='/images/home1.png'
+          src='/images/home/home1.png'
           alt='Gallery background'
           fill
           className='object-cover opacity-80'
