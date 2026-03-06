@@ -91,7 +91,7 @@ export default function PartnersHeroSection() {
                 priority
               />
               <div className='absolute inset-0 flex items-center justify-center px-1 sm:px-2'>
-                <h2 className='text-[10px] sm:text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl font-extrabold text-gray-900 tracking-tight text-[#3d6034] whitespace-nowrap'>
+                <h2 className='text-[10px] sm:text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl font-extrabold text-gray-900 tracking-[-0.02em] text-[#3d6034] whitespace-nowrap'>
                   {partnersName[currentIndex]}
                 </h2>
               </div>

@@ -24,7 +24,7 @@ export default function PersonalitySection() {
             <h3 className='text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[41.19px] font-semibold text-[#3d6034] font-pretendard leading-[100%] tracking-[-0.02em] text-right mb-2 sm:mb-3 md:mb-4'>
               개인화
             </h3>
-            <p className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[71.14px] font-semibold text-black font-pretendard leading-[140%] tracking-[-0.02em] text-right'>
+            <p className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[71.14px] font-semibold text-black font-pretendard leading-[180%] tracking-[-0.02em] text-right'>
               내 취향대로, <br />
               어울리는 전시를 추천해요
             </p>

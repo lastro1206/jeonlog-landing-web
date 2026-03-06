@@ -64,7 +64,7 @@ export default function FeaturesSection() {
           <p className='text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[41.19px] font-semibold text-[#3D6034] font-pretendard mb-3 sm:mb-4 md:mb-6 text-left leading-[100%] tracking-[-0.02em]'>
             카테고리
           </p>
-          <h2 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[71.14px] font-semibold text-black font-pretendard text-left leading-[140%] tracking-[-0.02em]'>
+          <h2 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[71.14px] font-semibold text-black font-pretendard text-left leading-[180%] tracking-[-0.02em]'>
             내 취향,
             <br />
             알고리즘과 큐레이팅으로

@@ -35,12 +35,12 @@ export default function Partnership() {
           </Button>
 
           {/* 설명 텍스트 */}
-          <div className='space-y-2 sm:space-y-3 md:space-y-4 text-black font-pretendard leading-[155%] tracking-[-0.01em]'>
-            <p className='text-base sm:text-lg md:text-xl lg:text-2xl xl:text-[30px] font-semibold leading-[155%] tracking-[-0.01em] px-2'>
+          <div className='space-y-2 sm:space-y-3 md:space-y-4 text-black font-pretendard leading-[155%] tracking-[-0.02em]'>
+            <p className='text-base sm:text-lg md:text-xl lg:text-2xl xl:text-[30px] font-semibold leading-[155%] tracking-[-0.02em] px-2'>
               <span className='text-[#3d6034] font-bold'>전:록</span>과 함께할
               파트너를 찾습니다
             </p>
-            <p className='text-base sm:text-lg md:text-xl lg:text-2xl xl:text-[30px] font-semibold leading-[155%] tracking-[-0.01em] px-2'>
+            <p className='text-base sm:text-lg md:text-xl lg:text-2xl xl:text-[30px] font-semibold leading-[155%] tracking-[-0.02em] px-2'>
               기관 · 갤러리 · 브랜드의 다양한 협업 제안을 환영합니다
             </p>
           </div>

@@ -59,7 +59,7 @@ export default function HeroSection() {
         </div>
 
         <div className='text-center text-white px-4 sm:px-6 md:px-8'>
-          <p className='text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-normal leading-[100%] tracking-[-0.03em] mb-2 sm:mb-3 md:mb-4 font-pretendard text-center opacity-90'>
+          <p className='text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-normal leading-[100%] tracking-[-0.02em] mb-2 sm:mb-3 md:mb-4 font-pretendard text-center opacity-90'>
             전시를 기록하고, 전시를 추천하다.
           </p>
           <h1

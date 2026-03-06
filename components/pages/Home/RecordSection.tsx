@@ -26,10 +26,10 @@ export default function RecordSection() {
         <div className='container mx-auto max-w-7xl px-4 sm:px-6 md:px-8 mb-8 sm:mb-12 md:mb-16'>
           {/* 텍스트 헤더 */}
           <div className='text-center'>
-            <p className='text-base sm:text-lg md:text-xl lg:text-[24px] font-semibold text-[#3D6034] font-pretendard mb-2 sm:mb-3 md:mb-4 tracking-tight'>
+            <p className='text-base sm:text-lg md:text-xl lg:text-[24px] font-semibold text-[#3D6034] font-pretendard mb-2 sm:mb-3 md:mb-4 tracking-[-0.02em]'>
               기록
             </p>
-            <h2 className='text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[48px] font-bold text-black font-pretendard leading-[1.3] tracking-tight'>
+            <h2 className='text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[48px] font-bold text-black font-pretendard leading-[1.3] tracking-[-0.02em]'>
               오래도록 기억하는 <br className='md:hidden' /> 전시 경험
             </h2>
           </div>

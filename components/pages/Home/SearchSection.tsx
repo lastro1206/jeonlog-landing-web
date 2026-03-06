@@ -22,7 +22,7 @@ export default function SearchSection() {
           <p className='text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[41.19px] font-semibold text-[#3D6034] font-pretendard mb-3 sm:mb-4 md:mb-6 leading-[100%] tracking-[-0.02em]'>
             검색
           </p>
-          <h2 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[71.14px] font-semibold text-black font-pretendard leading-[140%] tracking-[-0.02em]'>
+          <h2 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[71.14px] font-semibold text-black font-pretendard leading-[180%] tracking-[-0.02em]'>
             나만을 위한
             <br />
             추천 검색어부터,
