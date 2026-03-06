@@ -71,7 +71,7 @@ export default function PartnersHeroSection() {
         className={`container mx-auto max-w-6xl text-center section-fade-in relative z-10 ${
           isSectionVisible ? "visible" : ""
         }`}>
-        <h1 className='text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#3d6034] mb-4 sm:mb-5 md:mb-6 font-pretendard leading-normal tracking-normal font-extrabold px-2'>
+        <h1 className='text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl text-[#3d6034] mb-3 sm:mb-4 md:mb-5 lg:mb-6 font-pretendard leading-normal tracking-normal font-extrabold px-2'>
           전:록과 함께하고 있는
         </h1>
 
@@ -81,7 +81,7 @@ export default function PartnersHeroSection() {
               isAnimating ? "animate-flip-3d" : ""
             }`}
             style={{ transformStyle: "preserve-3d" }}>
-            <div className='relative inline-block w-[280px] sm:w-[320px] md:w-[360px] lg:w-[400px]'>
+            <div className='relative inline-block w-[200px] sm:w-[240px] md:w-[280px] lg:w-[320px] xl:w-[360px] 2xl:w-[400px]'>
               <Image
                 src='/images/partnersNameBorder.png'
                 alt={`${partnersName[currentIndex]} 파트너 갤러리 로고`}
@@ -90,8 +90,8 @@ export default function PartnersHeroSection() {
                 className='w-full h-full object-contain'
                 priority
               />
-              <div className='absolute inset-0 flex items-center justify-center px-2'>
-                <h2 className='text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-extrabold text-gray-900 tracking-tight text-[#3d6034] whitespace-nowrap'>
+              <div className='absolute inset-0 flex items-center justify-center px-1 sm:px-2'>
+                <h2 className='text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl font-extrabold text-gray-900 tracking-tight text-[#3d6034] whitespace-nowrap'>
                   {partnersName[currentIndex]}
                 </h2>
               </div>
@@ -99,7 +99,7 @@ export default function PartnersHeroSection() {
           </div>
         </div>
 
-        <p className='text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#3d6034] mt-3 sm:mt-4 font-pretendard leading-normal tracking-normal font-extrabold px-2'>
+        <p className='text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl text-[#3d6034] mt-2 sm:mt-3 md:mt-4 font-pretendard leading-normal tracking-normal font-extrabold px-2'>
           소개합니다
         </p>
       </div>
