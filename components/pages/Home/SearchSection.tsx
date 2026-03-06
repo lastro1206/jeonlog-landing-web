@@ -33,7 +33,7 @@ export default function SearchSection() {
 
         {/* 이미지 그리드 - 중앙정렬 */}
         <div className='flex justify-center w-full'>
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-[56.16px] w-full max-w-[1302.96px]'>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-[56.16px] w-full max-w-[1302.96px]'>
             {/* 첫 번째 이미지 */}
             <div className='w-full md:w-[496.0986328125px] h-auto md:h-[486.31805419921875px] mx-auto md:mx-0'>
               <div

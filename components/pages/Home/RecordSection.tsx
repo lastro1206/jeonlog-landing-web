@@ -15,7 +15,7 @@ export default function RecordSection() {
     <div className='relative bg-[#F0FAED]'>
       <section
         ref={ref as React.RefObject<HTMLElement>}
-        className={`bg-white pt-20 pb-40 relative section-fade-in ${
+        className={`bg-white pt-8 sm:pt-12 md:pt-16 lg:pt-20 pb-16 sm:pb-24 md:pb-32 lg:pb-40 relative section-fade-in ${
           isVisible ? "visible" : ""
         }`}
         style={{

@@ -13,7 +13,7 @@ export default function PersonalitySection() {
   return (
     <section
       ref={ref as React.RefObject<HTMLElement>}
-      className={`bg-white py-20 px-4 section-fade-in ${
+      className={`bg-white py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 md:px-8 section-fade-in ${
         isVisible ? "visible" : ""
       }`}>
       <div className='container mx-auto max-w-7xl px-4 sm:px-6 md:px-8'>

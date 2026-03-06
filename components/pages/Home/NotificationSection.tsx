@@ -13,7 +13,7 @@ export default function NotificationSection() {
   return (
     <section
       ref={ref as React.RefObject<HTMLElement>}
-      className={`bg-[#F0FAED] pt-0 pb-20 section-fade-in ${
+      className={`bg-[#F0FAED] pt-0 pb-8 sm:pb-12 md:pb-16 lg:pb-20 section-fade-in ${
         isVisible ? "visible" : ""
       }`}
       style={{
