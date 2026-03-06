@@ -71,7 +71,7 @@ export default function PartnersHeroSection() {
         className={`container mx-auto max-w-6xl text-center section-fade-in relative z-10 ${
           isSectionVisible ? "visible" : ""
         }`}>
-        <h1 className='text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl text-[#3d6034] mb-3 sm:mb-4 md:mb-5 lg:mb-6 font-pretendard leading-normal tracking-normal font-extrabold px-2'>
+        <h1 className='text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl text-[#3d6034] mb-2 sm:mb-3 md:mb-4 lg:mb-5 xl:mb-6 font-pretendard leading-normal tracking-normal font-extrabold px-2'>
           전:록과 함께하고 있는
         </h1>
 
@@ -81,7 +81,7 @@ export default function PartnersHeroSection() {
               isAnimating ? "animate-flip-3d" : ""
             }`}
             style={{ transformStyle: "preserve-3d" }}>
-            <div className='relative inline-block w-[200px] sm:w-[240px] md:w-[280px] lg:w-[320px] xl:w-[360px] 2xl:w-[400px]'>
+            <div className='relative inline-block w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] xl:w-[320px] 2xl:w-[360px]'>
               <Image
                 src='/images/partnersNameBorder.png'
                 alt={`${partnersName[currentIndex]} 파트너 갤러리 로고`}
@@ -91,7 +91,7 @@ export default function PartnersHeroSection() {
                 priority
               />
               <div className='absolute inset-0 flex items-center justify-center px-1 sm:px-2'>
-                <h2 className='text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl font-extrabold text-gray-900 tracking-tight text-[#3d6034] whitespace-nowrap'>
+                <h2 className='text-[10px] sm:text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl font-extrabold text-gray-900 tracking-tight text-[#3d6034] whitespace-nowrap'>
                   {partnersName[currentIndex]}
                 </h2>
               </div>
@@ -99,7 +99,7 @@ export default function PartnersHeroSection() {
           </div>
         </div>
 
-        <p className='text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl text-[#3d6034] mt-2 sm:mt-3 md:mt-4 font-pretendard leading-normal tracking-normal font-extrabold px-2'>
+        <p className='text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl text-[#3d6034] mt-2 sm:mt-3 md:mt-4 font-pretendard leading-normal tracking-normal font-extrabold px-2'>
           소개합니다
         </p>
       </div>

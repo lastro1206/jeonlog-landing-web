@@ -38,36 +38,37 @@ export default function HeroSection() {
 
       <div className='relative z-10 h-full flex flex-col items-center justify-between py-8 sm:py-12 md:py-16 lg:py-20'>
         <div className='flex gap-2 sm:gap-3'>
-          <Button 
+          <Button
             asChild
             className='bg-[#4c6b43] hover:bg-[#3d5a34] text-white rounded-md px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2 flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm'>
             <a
               href='https://apps.apple.com/app/jeon-log/id6757150249'
               target='_blank'
-              rel='noopener noreferrer'
-            >
+              rel='noopener noreferrer'>
               <span className='font-semibold'>App Store</span>
             </a>
           </Button>
-          <Button 
+          <Button
             disabled
             className='bg-[#4c6b43]/60 hover:bg-[#4c6b43]/60 text-white/80 rounded-md px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2 flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm cursor-not-allowed relative'>
             <span className='font-semibold'>Google Play</span>
-            <span className='text-[10px] sm:text-xs ml-1 opacity-75'>(준비중)</span>
+            <span className='text-[10px] sm:text-xs ml-1 opacity-75'>
+              (준비중)
+            </span>
           </Button>
         </div>
 
         <div className='text-center text-white px-4 sm:px-6 md:px-8'>
-          <p className='text-[28.08px] font-normal leading-[100%] tracking-[-0.03em] mb-3 sm:mb-4 font-pretendard text-center opacity-90'>
+          <p className='text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-normal leading-[100%] tracking-[-0.03em] mb-2 sm:mb-3 md:mb-4 font-pretendard text-center opacity-90'>
             전시를 기록하고, 전시를 추천하다.
           </p>
           <h1
-            className='mb-6 sm:mb-8 md:mb-10'
+            className='mb-4 sm:mb-6 md:mb-8 lg:mb-10'
             style={{
               fontFamily:
                 "var(--font-apple-sd-gothic-neo-b00), -apple-system, BlinkMacSystemFont, sans-serif",
               fontWeight: 400,
-              fontSize: "74.88px",
+              fontSize: "clamp(20px, 5vw, 74.88px)",
               lineHeight: "100%",
               letterSpacing: "-0.02em",
             }}>

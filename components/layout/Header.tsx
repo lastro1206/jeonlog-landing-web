@@ -19,7 +19,7 @@ export default function Header() {
       className={`bg-[#3d6034] text-white fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ${
         isVisible ? "translate-y-0" : "-translate-y-full"
       }`}>
-      <div className='w-full max-w-[1920px] mx-auto px-10 py-[15px]'>
+      <div className='w-full max-w-[1920px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10 py-3 sm:py-[15px]'>
         <div className='flex h-[35px] items-center justify-between'>
           {/* 로고 */}
           <Link

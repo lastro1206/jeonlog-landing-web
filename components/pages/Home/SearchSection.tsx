@@ -13,16 +13,16 @@ export default function SearchSection() {
   return (
     <section
       ref={ref as React.RefObject<HTMLElement>}
-      className={`bg-[#F0FAED] py-20 px-4 section-fade-in ${
+      className={`bg-[#F0FAED] py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 md:px-8 section-fade-in ${
         isVisible ? "visible" : ""
       }`}>
-      <div className='container mx-auto max-w-7xl px-4'>
+      <div className='container mx-auto max-w-7xl px-4 sm:px-6 md:px-8'>
         {/* 텍스트 헤더 */}
-        <div className='text-left mb-[216px]'>
-          <p className='text-[41.19px] font-semibold text-[#3D6034] font-pretendard mb-6 leading-[100%] tracking-[-0.02em]'>
+        <div className='text-left mb-12 sm:mb-16 md:mb-24 lg:mb-32 xl:mb-[216px]'>
+          <p className='text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[41.19px] font-semibold text-[#3D6034] font-pretendard mb-3 sm:mb-4 md:mb-6 leading-[100%] tracking-[-0.02em]'>
             검색
           </p>
-          <h2 className='text-[71.14px] font-semibold text-black font-pretendard leading-[140%] tracking-[-0.02em]'>
+          <h2 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[71.14px] font-semibold text-black font-pretendard leading-[140%] tracking-[-0.02em]'>
             나만을 위한
             <br />
             추천 검색어부터,

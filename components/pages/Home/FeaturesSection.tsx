@@ -55,16 +55,16 @@ export default function FeaturesSection() {
   return (
     <section
       ref={ref as React.RefObject<HTMLElement>}
-      className={`bg-[#F0FAED] py-20 section-fade-in ${
+      className={`bg-[#F0FAED] py-8 sm:py-12 md:py-16 lg:py-20 section-fade-in ${
         isVisible ? "visible" : ""
       }`}>
-      <div className='container mx-auto max-w-7xl px-4'>
+      <div className='container mx-auto max-w-7xl px-4 sm:px-6 md:px-8'>
         {/* 텍스트 헤더 */}
-        <div className='text-center mb-16'>
-          <p className='text-[41.19px] font-semibold text-[#3D6034] font-pretendard mb-6 text-left leading-[100%] tracking-[-0.02em]'>
+        <div className='text-center mb-8 sm:mb-12 md:mb-16'>
+          <p className='text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[41.19px] font-semibold text-[#3D6034] font-pretendard mb-3 sm:mb-4 md:mb-6 text-left leading-[100%] tracking-[-0.02em]'>
             카테고리
           </p>
-          <h2 className='text-[71.14px] font-semibold text-black font-pretendard text-left leading-[140%] tracking-[-0.02em]'>
+          <h2 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[71.14px] font-semibold text-black font-pretendard text-left leading-[140%] tracking-[-0.02em]'>
             내 취향,
             <br />
             알고리즘과 큐레이팅으로
@@ -76,7 +76,7 @@ export default function FeaturesSection() {
 
       {/* 기능 블록들 - 전체 너비 */}
       <div className='w-full'>
-        <div className='container mx-auto max-w-7xl px-4 space-y-12 md:space-y-16'>
+        <div className='container mx-auto max-w-7xl px-4 sm:px-6 md:px-8 space-y-8 sm:space-y-10 md:space-y-12 lg:space-y-16'>
           {/* 장르 섹션 */}
           <FeatureBlock
             image1='/images/home/home5_pa1_1920.png'

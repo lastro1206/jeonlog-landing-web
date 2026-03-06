@@ -38,8 +38,8 @@ export default function AboutUs() {
       </section>
 
       {/* 아래 화살표 */}
-      <section className='w-full flex justify-center py-8'>
-        <div className='w-12 h-12'>
+      <section className='w-full flex justify-center py-4 sm:py-6 md:py-8'>
+        <div className='w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12'>
           <Image
             src='/images/downArrow.png'
             alt='아래 화살표'

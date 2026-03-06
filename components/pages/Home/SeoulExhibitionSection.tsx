@@ -13,7 +13,7 @@ export default function SeoulExhibitionSection() {
   return (
     <section
       ref={ref as React.RefObject<HTMLElement>}
-      className={`bg-[#F9F2E8] py-20 px-4 section-fade-in ${
+      className={`bg-[#F9F2E8] py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 md:px-8 section-fade-in ${
         isVisible ? "visible" : ""
       }`}>
       <div className='container mx-auto max-w-4xl text-center'>

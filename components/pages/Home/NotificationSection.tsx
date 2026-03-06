@@ -19,16 +19,16 @@ export default function NotificationSection() {
       style={{
         background: "linear-gradient(to bottom, #F0FAED, #3d6034)",
       }}>
-      <div className='container mx-auto max-w-7xl mb-16'>
+      <div className='container mx-auto max-w-7xl px-4 sm:px-6 md:px-8 mb-8 sm:mb-12 md:mb-16'>
         {/* 텍스트 헤더 */}
         <div className='text-left'>
-          <p className='text-[41.19px] font-semibold text-[#3D6034] font-pretendard mb-6 leading-[100%] tracking-[-0.02em]'>
+          <p className='text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[41.19px] font-semibold text-[#3D6034] font-pretendard mb-3 sm:mb-4 md:mb-6 leading-[100%] tracking-[-0.02em]'>
             알림
           </p>
-          <h2 className='text-[71.14px] font-semibold text-black font-pretendard leading-[140%] tracking-[-0.02em] mb-4'>
+          <h2 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[71.14px] font-semibold text-black font-pretendard leading-[140%] tracking-[-0.02em] mb-2 sm:mb-3 md:mb-4'>
             기다리던 전시를, 놓친 기억 있으신가요?
           </h2>
-          <p className='text-lg text-black font-pretendard'>
+          <p className='text-sm sm:text-base md:text-lg text-black font-pretendard'>
             관심만 남기면, 끝나기 전에 다시 불빛이 켜집니다.
           </p>
         </div>
