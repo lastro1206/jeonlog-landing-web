@@ -17,21 +17,10 @@ export default function PersonalitySection() {
         isVisible ? "visible" : ""
       }`}>
       <div className='container mx-auto max-w-7xl'>
-        {/* 이미지와 텍스트 오버레이 */}
-        <div className='relative w-full'>
-          {/* 이미지 */}
-          <div className='w-full'>
-            <Image
-              src='/images/home/home8_2.png'
-              alt='앱 개인화 화면'
-              width={1920}
-              height={1080}
-              className='w-full h-auto object-cover'
-            />
-          </div>
-
-          {/* 텍스트 오버레이 */}
-          <div className='absolute -top-[100px] right-0 p-8 md:p-12 space-y-4 text-right'>
+        {/* 텍스트와 이미지 */}
+        <div className='w-full'>
+          {/* 텍스트 */}
+          <div className='mb-8 md:mb-12 p-8 md:p-12  text-right'>
             <h3 className='text-[41.19px] font-semibold text-[#3d6034] font-pretendard leading-[100%] tracking-[-0.02em] text-right'>
               개인화
             </h3>
@@ -39,6 +28,19 @@ export default function PersonalitySection() {
               내 취향대로, <br />
               어울리는 전시를 추천해요
             </p>
+          </div>
+
+          {/* 이미지 */}
+          <div className='w-full flex'>
+            <div>
+              <Image
+                src='/images/home/home8_2.png'
+                alt='앱 개인화 화면'
+                width={1920}
+                height={1080}
+                className='w-[1200px] h-auto object-cover'
+              />
+            </div>
           </div>
         </div>
       </div>

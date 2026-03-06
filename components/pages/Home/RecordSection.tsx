@@ -11,34 +11,46 @@ export default function RecordSection() {
   });
 
   return (
-    <section
-      ref={ref as React.RefObject<HTMLElement>}
-      className={`bg-white pt-20 pb-0 section-fade-in ${
-        isVisible ? "visible" : ""
-      }`}>
-      <div className='container mx-auto max-w-7xl px-4 mb-16'>
-        {/* 텍스트 헤더 */}
-        <div className='text-center'>
-          <p className='text-[41.19px] font-semibold text-[#3D6034] font-pretendard mb-6 leading-[100%] tracking-[-0.02em]'>
-            기록
-          </p>
-          <h2 className='text-[71.14px] font-semibold text-black font-pretendard leading-[140%] tracking-[-0.02em]'>
-            오래도록 기억하는 전시 경험
-          </h2>
+    // 배경색이 있는 부모 컨테이너 (곡선 바깥쪽 색상)
+    <div className='relative bg-[#F0FAED]'>
+      <section
+        ref={ref as React.RefObject<HTMLElement>}
+        className={`bg-white pt-20 pb-40 relative section-fade-in ${
+          isVisible ? "visible" : ""
+        }`}
+        style={{
+          // 하단을 반원 모양으로 만드는 핵심 스타일
+          borderBottomLeftRadius: "50% 550px",
+          borderBottomRightRadius: "50% 550px",
+        }}>
+        <div className='container mx-auto max-w-7xl px-4 mb-16'>
+          {/* 텍스트 헤더 */}
+          <div className='text-center'>
+            <p className='text-[20px] md:text-[24px] font-semibold text-[#3D6034] font-pretendard mb-4 tracking-tight'>
+              기록
+            </p>
+            <h2 className='text-[32px] md:text-[48px] font-bold text-black font-pretendard leading-[1.3] tracking-tight'>
+              오래도록 기억하는 <br className='md:hidden' /> 전시 경험
+            </h2>
+          </div>
         </div>
-      </div>
 
-      {/* 이미지 - 전체 너비 */}
-      <div className='w-full'>
-        <Image
-          src='/images/home/home10_2.png'
-          alt='기록 기능'
-          width={1920}
-          height={1080}
-          className='w-full h-auto object-cover'
-          unoptimized
-        />
-      </div>
-    </section>
+        {/* 이미지 및 레이아웃 */}
+        <div className='w-full flex flex-col items-center justify-center px-4'>
+          <div className='max-w-[600px] w-full relative'>
+            {/* 핸드폰 목업 내부 이미지 */}
+            <div className='relative z-10'>
+              <Image
+                src='/images/home/home10_2.png'
+                alt='기록 기능 상세'
+                width={600}
+                height={1000}
+                className='w-full h-auto object-contain'
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }

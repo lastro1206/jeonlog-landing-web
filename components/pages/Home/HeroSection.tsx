@@ -38,11 +38,22 @@ export default function HeroSection() {
 
       <div className='relative z-10 h-full flex flex-col items-center justify-between py-8 sm:py-12 md:py-16 lg:py-20'>
         <div className='flex gap-2 sm:gap-3'>
-          <Button className='bg-[#4c6b43] hover:bg-[#3d5a34] text-white rounded-md px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2 flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm'>
-            <span className='font-semibold'>App Store</span>
+          <Button 
+            asChild
+            className='bg-[#4c6b43] hover:bg-[#3d5a34] text-white rounded-md px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2 flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm'>
+            <a
+              href='https://apps.apple.com/app/jeon-log/id6757150249'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <span className='font-semibold'>App Store</span>
+            </a>
           </Button>
-          <Button className='bg-[#4c6b43] hover:bg-[#3d5a34] text-white rounded-md px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2 flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm'>
+          <Button 
+            disabled
+            className='bg-[#4c6b43]/60 hover:bg-[#4c6b43]/60 text-white/80 rounded-md px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2 flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm cursor-not-allowed relative'>
             <span className='font-semibold'>Google Play</span>
+            <span className='text-[10px] sm:text-xs ml-1 opacity-75'>(준비중)</span>
           </Button>
         </div>
 
